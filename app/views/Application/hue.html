@@ -1,0 +1,10 @@
+#{extends 'main.html' /}
+#{set title:'Home' /}
+
+<form action="@{Application.hue()}" method="PUT">
+	<p>number: <input type="number" name="number" value="${number}"></p>
+	<p>sat: <input type="number" name="sat" value="${sat}"></p>
+	<p>bri: <input type="number" name="bri" value="${bri}"></p>
+	<p>hue: <input type="number" name="hue" value="${hue}"></p>
+	<p><input type="submit" value="HUE"> </p>
+</form>

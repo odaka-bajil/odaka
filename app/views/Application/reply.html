@@ -1,0 +1,15 @@
+
+アニメの名言からタイトルを探してみますね。データベースが少ないんですが.
+<br>
+<form action="@{Application.reply()}" method="GET">
+<input type="text" id="phrase" name="phrase" placeholder="名言を入力">
+<input type="submit" value="送信するやで">
+</form>
+
+#{if phrase}
+<h4>${phrase} で検索した結果</h4>
+<p>${reply}</p>
+#{list items:phrases,as:'p'}
+<li>${p.text}(タグ: #{list items:p.tag_list, as:'tag'}${tag}#{/list})</li>
+#{/list}
+#{/if}
