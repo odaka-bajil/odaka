@@ -28,7 +28,7 @@ public class Application extends Controller {
 		ReplyService service = new ReplyService(json);
 		MessageEvent event = service.getMessageEvent();
 		TextMessage message = event.events.get(0).message;
-
+		//ここから
 		if (message.text != null && message.text.equals("ほげほげ")) {
 			message.text = "ほげほげ";
 		} else if (message.text != null && message.text.equals("こんにちは")) {
@@ -41,6 +41,7 @@ public class Application extends Controller {
 		Schedule sch = new Schedule();
 		sch.title = message.text;
 		sch.save();
+		//ここまで
 		service.setMessage(message);
 		service.run();
 //		List<Schedule> schedules = Schedule.findAll();
